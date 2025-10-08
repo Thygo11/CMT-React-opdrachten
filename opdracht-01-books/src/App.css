@@ -18,25 +18,67 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+.navbar {
+  background-color: #222;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.navbar li:hover {
+  text-decoration: underline;
+}
+.layout-container {
+  width: 60vw;
+  margin: 0 auto;
+}
+.book-list {
+  display: flex;                
+  justify-content: center;      
+  gap: 2rem;                  
+  margin-top: 2rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;      
+  align-items: center;          
+  width: 200px;                  
+  text-align: center;
+}
+
+.book img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;           
+}
+
+.book h3 {
+  margin: 0.5rem 0 0.2rem 0;     
+  font-size: 1.1rem;
+}
+
+.book p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
 }
