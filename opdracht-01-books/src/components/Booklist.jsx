@@ -19,11 +19,7 @@ function BookList() {
       author: "Suzanne Collins",
       image: "/images/book-3.png",
     },
-     {
-      title: "Harry Potter",
-      author: "J.K. Rowling",
-      image: "/images/book-1.png",
-    },
+    
   ]);
 
   return (
