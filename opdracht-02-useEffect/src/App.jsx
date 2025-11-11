@@ -1,11 +1,13 @@
-import Clock from "../src/Components/Clock.jsx"; 
+import WelcomeMessage from "./Componenets/Welcomemessage.jsx";
+import Clock from "./Componenets/Clock.jsx";
 
 function App() {
   return (
     <div className="App">
-      <h1>Clock</h1>
+      <WelcomeMessage />
       <Clock />
     </div>
+
   );
 }
 
