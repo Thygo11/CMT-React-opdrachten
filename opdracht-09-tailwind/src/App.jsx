@@ -4,7 +4,9 @@ function App() {
 
   return (
     <>
-      <h1>Opdracht 9 - Tailwind</h1>
+      <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
     </>
   )
 }
