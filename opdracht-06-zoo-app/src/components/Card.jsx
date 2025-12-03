@@ -12,6 +12,7 @@ const Card = ({ animal }) => {
       <img src={animal.imageUrl} alt={animal.name} />
       <h2>{animal.name}</h2>
     </section>
+    
   );
 };
 

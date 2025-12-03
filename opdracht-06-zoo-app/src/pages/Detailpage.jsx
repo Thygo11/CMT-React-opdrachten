@@ -5,6 +5,10 @@ const DetailPage = () => {
   const { id } = useParams();
   const animal = animals.find((a) => a.id === Number(id));
 
+  if (!animal) {
+    return <p>Dier niet gevonden</p>;
+  }
+
   return (
     <section className="detail-page">
       <img src={animal.imageUrl} alt={animal.name} />

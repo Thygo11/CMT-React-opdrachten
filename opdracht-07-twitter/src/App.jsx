@@ -1,12 +1,15 @@
-import './App.css'
+import "./App.css";
+import CreateMessage from "./components/createMessage.jsx";
+import Message from "./components/message.jsx";
+import MessageList from "./components/MessageList.jsx";
 
 function App() {
-
   return (
     <>
-      <h1>Opdracht 7 - Twitter</h1>
+      <CreateMessage />
+      <MessageList/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
