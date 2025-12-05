@@ -1,4 +1,4 @@
-const Message = (name, message) => {
+const Message = ({name, message}) => {
     return (
 <>
 <h2>{name}</h2>
