@@ -69,6 +69,9 @@ function BookList() {
             author={book.author}
             image={book.image}
             category={book.category}
+            description={book.description}
+            year={book.year}
+            pages={book.pages}
           />
         ))}
       </div>
