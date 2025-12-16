@@ -2,9 +2,14 @@ import { useState } from "react";
 
 function Book({ title, author, image, category }) {
   const [aantalKeerGelezen, setAantalKeerGelezen] = useState(0);
+  const [liked, setLiked] = useState(false);
 
   function verhoogTeller() {
     setAantalKeerGelezen(aantalKeerGelezen + 1);
+  }
+
+  function toggleLike() {
+    setLiked(!liked);
   }
 
   return (
@@ -14,8 +19,23 @@ function Book({ title, author, image, category }) {
       <p>{author}</p>
       <p>{category}</p>
 
-      
-      <button onClick={verhoogTeller}>Ik heb dit boek gelezen</button>
+  
+      <div className="favorite-section">
+        <button onClick={toggleLike}>
+          {liked ? "❤️" : "🤍"}
+        </button>
+
+        {liked && (
+          <p className="favorited-text">
+            Toegevoegd aan favorieten
+          </p>
+        )}
+      </div>
+
+      <button onClick={verhoogTeller}>
+        Ik heb dit boek gelezen
+      </button>
+
       <p>Aantal keer gelezen: {aantalKeerGelezen}</p>
     </div>
   );
