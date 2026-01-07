@@ -1,14 +1,21 @@
 import { useState } from "react";
+import {toast} from "react-toastify";
 
-export default function BezoekFormulier() {
+export default function UserProfile({saveProfile}) {
   const [naam, setNaam] = useState("");
   const [email, setEmail] = useState("");
   const [telefoon, setTelefoon] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ naam, email, telefoon });
+ 
+    if(!naam.trim() || !email.trim() || !telefoon.trim()){
+toast.error("Vul alle velden in!");
+return;
+    }
+    saveProfile({naam, email, telefoon})
   };
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -42,7 +49,7 @@ export default function BezoekFormulier() {
         />
       </label>
 
-      <button type="submit">Verzenden</button>
+      <button type="submit">Profiel aanmaken</button>
     </form>
   );
 }
