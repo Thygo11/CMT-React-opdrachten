@@ -1,55 +1,36 @@
 import { useState } from "react";
-import {toast} from "react-toastify";
-
-export default function UserProfile({saveProfile}) {
-  const [naam, setNaam] = useState("");
-  const [email, setEmail] = useState("");
-  const [telefoon, setTelefoon] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+import { toast } from "react-toastify";
+import { setUserProfile } from "../utils/localStorage";
  
-    if(!naam.trim() || !email.trim() || !telefoon.trim()){
-toast.error("Vul alle velden in!");
-return;
-    }
-    saveProfile({naam, email, telefoon})
+const UserProfile = ({ onSave, defaultValues }) => {
+ 
+ 
+  const saveProfile = () => {
+    if (!form.name || !form.email || !form.phone)
+      return toast.error("Alle velden invullen");
+ 
+    setUserProfile(form);
+    toast.success(" Profiel opgeslagen");
+    onSave(form);
   };
-
-
+    const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+   const [form, setForm] = useState(defaultValues || { name: "", email: "", phone: "" });
+ 
+ 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Naam
-        <input
-          type="text"
-          value={naam}
-          onChange={(e) => setNaam(e.target.value)}
-          required
-        />
-      </label>
-
-      <label>
-        E-mail
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-
-      <label>
-        Telefoon
-        <input
-          type="tel"
-          value={telefoon}
-          onChange={(e) => setTelefoon(e.target.value)}
-          required
-        />
-      </label>
-
-      <button type="submit">Profiel aanmaken</button>
-    </form>
+    <div >
+      <h2 >Jouw Profiel</h2>
+ 
+      <input  name="name" placeholder="Naam" value={form.name} onChange={handleChange}/>
+      <input  name="email" placeholder="Email" value={form.email} onChange={handleChange}/>
+      <input  name="phone" placeholder="Telefoon" value={form.phone} onChange={handleChange}/>
+ 
+      <button onClick={saveProfile}>
+        Opslaan
+      </button>
+    </div>
   );
-}
+};
+ 
+export default UserProfile;
